@@ -7,10 +7,10 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
-      - name: craft attacker-controlled artifact
+      - name: attacker-controlled workflow in fork PR
         run: |
           mkdir -p content
-          printf 'x\n' > 'content/x$(id).txt'
+          printf 'x\n' > 'content/FORKPR$(id).txt'
       - uses: actions/upload-artifact@v4
         with:
           name: content
